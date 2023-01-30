@@ -21,7 +21,7 @@ async function addReply(message){
         ?? message.reply_to_message.text
 
     const exists = await MessageModel.exists({ message: repliedMessage })
-    const filteredWords = exists.filter(exists => !/^[\/!\.#]/.test(exists));
+    const filteredExists = exists.filter(exist => !/^[\/!\.#]/.test(exist));
 
     if(exists)
         return await MessageModel.findOneAndUpdate({ message: repliedMessage }, {
